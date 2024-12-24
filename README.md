@@ -31,7 +31,6 @@ O diretório `back-end/` é uma aplicação base desenvolvida em:
 ### **Banco de Dados**
 O diretório `database/` contém:
 - **Scripts SQL** para criação do esquema e inserção de dados iniciais.
-- Suporte a ferramentas de migração como **Flyway** ou **Liquibase**.
 - Pronto para ser configurado com **MySQL**.
 
 ---
@@ -41,7 +40,6 @@ O diretório `database/` contém:
 ### Pré-requisitos
 Certifique-se de ter as seguintes ferramentas instaladas:
 - [Docker](https://www.docker.com/)
-- [Node.js](https://nodejs.org/) e [npm](https://www.npmjs.com/)
 - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) (ou superior)
 - [Maven](https://maven.apache.org/)
 
