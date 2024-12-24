@@ -18,8 +18,8 @@ base-stack-template/
 
 ### **Front-End**
 O diretório `front-end/` contém um projeto base para aplicações web, utilizando:
-- **HTML** e **LESS** para a estrutura e estilização.
-- **TypeScript** para desenvolvimento com tipagem estática.
+- **HTML** e **CSS** para a estrutura e estilização.
+- **JavaScript** para desenvolvimento com tipagem estática.
 - Organização modular de componentes e estilos globais reutilizáveis.
 
 ### **Back-End**
@@ -84,8 +84,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 - **Front-End**
   - Estrutura modular e escalável.
-  - Estilos globais e reutilizáveis com **LESS**.
-  - Componentes pré-configurados com **TypeScript**.
+  - Estilos globais e reutilizáveis com **CSS**.
+  - Componentes pré-configurados com **JavaScript**.
 
 - **Back-End**
   - CRUD genérico para APIs REST.
@@ -102,8 +102,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 ### **Front-End**
 - HTML
-- LESS
-- TypeScript
+- CSS
+- JavaScript
 
 ### **Back-End**
 - Kotlin
