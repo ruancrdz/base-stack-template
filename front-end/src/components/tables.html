@@ -1,0 +1,196 @@
+<section>
+  <h1>Tabelas Dinâmicas</h1>
+  <p>
+    Exemplo de tabela com paginação, colunas reordenáveis, filtragem e
+    visualização responsiva.
+  </p>
+
+  <!-- Barra de busca -->
+  <input
+    type="text"
+    id="tableFilter"
+    class="table-filter"
+    placeholder="Filtrar dados..."
+    oninput="filterTable()"
+  />
+
+  <!-- Container da tabela -->
+  <div class="table-container">
+    <table class="table" id="dynamicTable">
+      <thead>
+        <tr>
+          <th draggable="true">Nome</th>
+          <th draggable="true">Email</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>João</td>
+          <td>joao@gmail.com</td>
+          <td><button class="btn small">Editar</button></td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>maria@gmail.com</td>
+          <td><button class="btn small">Editar</button></td>
+        </tr>
+        <tr>
+          <td>Ana</td>
+          <td>ana@gmail.com</td>
+          <td><button class="btn small">Editar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button class="btn outlined" onclick="prevPage()">Anterior</button>
+      <span id="pageInfo"></span>
+      <button class="btn outlined" onclick="nextPage()">Próximo</button>
+    </div>
+  </div>
+  <div class="code-container">
+    <pre>
+    <!-- Barra de busca -->
+    <!-- Input para filtrar os dados da tabela dinamicamente -->
+    &lt;input
+      type="text"
+      id="tableFilter"
+      class="table-filter"
+      placeholder="Filtrar dados..."
+      oninput="filterTable()" /&gt;
+  
+    <!-- Container da tabela -->
+    &lt;div class="table-container"&gt;
+      <!-- Tabela com cabeçalhos reordenáveis e conteúdo dinâmico -->
+      &lt;table class="table" id="dynamicTable"&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            <!-- Cabeçalhos "draggable" para permitir a reordenação -->
+            &lt;th draggable="true"&gt;Nome&lt;/th&gt;
+            &lt;th draggable="true"&gt;Email&lt;/th&gt;
+            &lt;th&gt;Ação&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          <!-- Exemplo de linhas da tabela -->
+          &lt;tr&gt;
+            &lt;td&gt;João&lt;/td&gt;
+            &lt;td&gt;joao@gmail.com&lt;/td&gt;
+            &lt;td&gt;&lt;button class="btn small"&gt;Editar&lt;/button&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Maria&lt;/td&gt;
+            &lt;td&gt;maria@gmail.com&lt;/td&gt;
+            &lt;td&gt;&lt;button class="btn small"&gt;Editar&lt;/button&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Ana&lt;/td&gt;
+            &lt;td&gt;ana@gmail.com&lt;/td&gt;
+            &lt;td&gt;&lt;button class="btn small"&gt;Editar&lt;/button&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+  
+      <!-- Paginação -->
+      <!-- Botões para navegar pelas páginas da tabela -->
+      &lt;div class="pagination"&gt;
+        &lt;button class="btn outlined" onclick="prevPage()"&gt;Anterior&lt;/button&gt;
+        &lt;span id="pageInfo"&gt;&lt;/span&gt;
+        &lt;button class="btn outlined" onclick="nextPage()"&gt;Próximo&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    <!-- JavaScript -->
+    <!-- Script para implementar as funcionalidades -->
+    &lt;script&gt;
+      // Função para filtrar a tabela com base no texto inserido
+      function filterTable() {
+        const filter = document.querySelector("#tableFilter").value.toLowerCase();
+        const rows = document.querySelectorAll("#dynamicTable tbody tr");
+        rows.forEach((row) => {
+          const cells = Array.from(row.querySelectorAll("td"));
+          const matches = cells.some((cell) =>
+            cell.textContent.toLowerCase().includes(filter)
+          );
+          row.style.display = matches ? "" : "none";
+        });
+      }
+  
+      // Funções de paginação
+      let currentPage = 1;
+      const rowsPerPage = 2;
+  
+      function paginate() {
+        const rows = Array.from(document.querySelectorAll("#dynamicTable tbody tr"));
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+  
+        rows.forEach((row, index) => {
+          row.style.display = "none";
+          if (
+            index >= (currentPage - 1) * rowsPerPage &&
+            index < currentPage * rowsPerPage
+          ) {
+            row.style.display = "";
+          }
+        });
+  
+        document.querySelector("#pageInfo").innerText = `Página ${currentPage} de ${totalPages}`;
+      }
+  
+      function prevPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          paginate();
+        }
+      }
+  
+      function nextPage() {
+        const rows = document.querySelectorAll("#dynamicTable tbody tr");
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          paginate();
+        }
+      }
+  
+      // Reordenação de colunas
+      function enableDragAndDrop() {
+        const headers = document.querySelectorAll("th[draggable='true']");
+        let draggedHeader = null;
+  
+        headers.forEach((header) => {
+          header.addEventListener("dragstart", (e) => {
+            draggedHeader = e.target;
+          });
+  
+          header.addEventListener("dragover", (e) => {
+            e.preventDefault();
+          });
+  
+          header.addEventListener("drop", (e) => {
+            e.preventDefault();
+            const target = e.target;
+            const indexDragged = Array.from(headers).indexOf(draggedHeader);
+            const indexTarget = Array.from(headers).indexOf(target);
+  
+            const rows = document.querySelectorAll("#dynamicTable tr");
+            rows.forEach((row) => {
+              const cells = Array.from(row.children);
+              cells[indexDragged].parentElement.insertBefore(
+                cells[indexDragged],
+                cells[indexTarget]
+              );
+            });
+          });
+        });
+      }
+  
+      document.addEventListener("DOMContentLoaded", () => {
+        paginate();
+        enableDragAndDrop();
+      });
+    &lt;/script&gt;
+  </pre>
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+<section>
+  <h1>Accordions</h1>
+  <p>Exemplo de seções expansíveis para exibir conteúdo colapsado.</p>
+
+  <!-- Accordions -->
+  <div class="accordion-container">
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Seção 1
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Conteúdo da seção 1.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Seção 2
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Conteúdo da seção 2.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header" onclick="toggleAccordion(this)">
+        Seção 3
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-content">
+        <p>Conteúdo da seção 3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bash com o Código -->
+  <div class="code-container">
+    <pre>
+        &lt;!-- Container do Accordion --&gt;
+        &lt;div class="accordion-container"&gt;
+          &lt;!-- Seção do Accordion --&gt;
+          &lt;div class="accordion"&gt;
+            &lt;!-- Cabeçalho do Accordion (clicável) --&gt;
+            &lt;button class="accordion-header" onclick="toggleAccordion(this)"&gt;
+              Seção 1
+              &lt;span class="accordion-icon"&gt;+&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;!-- Conteúdo do Accordion --&gt;
+            &lt;div class="accordion-content"&gt;
+              &lt;p&gt;Conteúdo da seção 1.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+  
+          &lt;!-- Outra seção do Accordion --&gt;
+          &lt;div class="accordion"&gt;
+            &lt;button class="accordion-header" onclick="toggleAccordion(this)"&gt;
+              Seção 2
+              &lt;span class="accordion-icon"&gt;+&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;div class="accordion-content"&gt;
+              &lt;p&gt;Conteúdo da seção 2.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+  
+          &lt;!-- Mais uma seção do Accordion --&gt;
+          &lt;div class="accordion"&gt;
+            &lt;button class="accordion-header" onclick="toggleAccordion(this)"&gt;
+              Seção 3
+              &lt;span class="accordion-icon"&gt;+&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;div class="accordion-content"&gt;
+              &lt;p&gt;Conteúdo da seção 3.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre
+    >
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

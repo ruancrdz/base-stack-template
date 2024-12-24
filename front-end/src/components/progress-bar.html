@@ -1,0 +1,54 @@
+<section>
+  <h1>Progress Bars</h1>
+  <p>
+    Exemplos de barras de progresso com animações suaves, formatos horizontais e
+    circulares.
+  </p>
+
+  <!-- Barra de Progresso Horizontal -->
+  <div class="progress-container">
+    <h3>Progresso Horizontal</h3>
+    <div class="progress-bar">
+      <div class="progress" id="horizontalProgress" style="width: 50%"></div>
+    </div>
+    <button
+      class="btn small"
+      onclick="updateProgress('horizontalProgress', 75)"
+    >
+      Atualizar para 75%
+    </button>
+  </div>
+
+  <!-- Barra de Progresso Circular -->
+  <div class="progress-container">
+    <h3>Progresso Circular</h3>
+    <div class="circular-progress" id="circularProgress">
+      <span class="circular-text" id="circularText">50%</span>
+    </div>
+    <button
+      class="btn small"
+      onclick="updateCircularProgress('circularProgress', 'circularText', 75)"
+    >
+      Atualizar para 75%
+    </button>
+  </div>
+
+  <!-- Bash com o Código -->
+  <div class="code-container">
+    <pre>
+        &lt;!-- Barra de Progresso Horizontal --&gt;
+        &lt;div class="progress-bar"&gt;
+          &lt;div class="progress" id="horizontalProgress" style="width: 50%;"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button onclick="updateProgress('horizontalProgress', 75)"&gt;Atualizar para 75%&lt;/button&gt;
+  
+        &lt;!-- Barra de Progresso Circular --&gt;
+        &lt;div class="circular-progress" id="circularProgress"&gt;
+          &lt;span class="circular-text" id="circularText"&gt;50%&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button onclick="updateCircularProgress('circularProgress', 'circularText', 75)"&gt;Atualizar para 75%&lt;/button&gt;
+      </pre
+    >
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

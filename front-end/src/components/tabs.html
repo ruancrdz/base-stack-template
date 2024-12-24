@@ -1,0 +1,71 @@
+<section>
+  <h1>Tabs</h1>
+  <p>Exemplo de navegação em abas para exibir conteúdo em seções.</p>
+
+  <!-- Tabs Horizontais -->
+  <div class="tabs-container">
+    <div class="tabs horizontal">
+      <button class="tab-btn active" onclick="openTab(event, 'tab1')">
+        Aba 1
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'tab2')">Aba 2</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab3')">Aba 3</button>
+    </div>
+    <div class="tab-content">
+      <div id="tab1" class="tab-pane active">Conteúdo da Aba 1</div>
+      <div id="tab2" class="tab-pane">Conteúdo da Aba 2</div>
+      <div id="tab3" class="tab-pane">Conteúdo da Aba 3</div>
+    </div>
+  </div>
+
+  <!-- Tabs Verticais -->
+  <div class="tabs-container vertical-tabs">
+    <div class="tabs vertical">
+      <button class="tab-btn active" onclick="openTab(event, 'vtab1')">
+        Aba 1
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'vtab2')">Aba 2</button>
+      <button class="tab-btn" onclick="openTab(event, 'vtab3')">Aba 3</button>
+    </div>
+    <div class="tab-content">
+      <div id="vtab1" class="tab-pane active">Conteúdo da Aba Vertical 1</div>
+      <div id="vtab2" class="tab-pane">Conteúdo da Aba Vertical 2</div>
+      <div id="vtab3" class="tab-pane">Conteúdo da Aba Vertical 3</div>
+    </div>
+  </div>
+
+  <!-- Bash com o Código -->
+  <div class="code-container">
+    <pre>
+        &lt;!-- Tabs Horizontais --&gt;
+        &lt;div class="tabs-container"&gt;
+          &lt;div class="tabs horizontal"&gt;
+            &lt;button class="tab-btn active" onclick="openTab(event, 'tab1')"&gt;Aba 1&lt;/button&gt;
+            &lt;button class="tab-btn" onclick="openTab(event, 'tab2')"&gt;Aba 2&lt;/button&gt;
+            &lt;button class="tab-btn" onclick="openTab(event, 'tab3')"&gt;Aba 3&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="tab-content"&gt;
+            &lt;div id="tab1" class="tab-pane active"&gt;Conteúdo da Aba 1&lt;/div&gt;
+            &lt;div id="tab2" class="tab-pane"&gt;Conteúdo da Aba 2&lt;/div&gt;
+            &lt;div id="tab3" class="tab-pane"&gt;Conteúdo da Aba 3&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;!-- Tabs Verticais --&gt;
+        &lt;div class="tabs-container vertical-tabs"&gt;
+          &lt;div class="tabs vertical"&gt;
+            &lt;button class="tab-btn active" onclick="openTab(event, 'vtab1')"&gt;Aba 1&lt;/button&gt;
+            &lt;button class="tab-btn" onclick="openTab(event, 'vtab2')"&gt;Aba 2&lt;/button&gt;
+            &lt;button class="tab-btn" onclick="openTab(event, 'vtab3')"&gt;Aba 3&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="tab-content"&gt;
+            &lt;div id="vtab1" class="tab-pane active"&gt;Conteúdo da Aba Vertical 1&lt;/div&gt;
+            &lt;div id="vtab2" class="tab-pane"&gt;Conteúdo da Aba Vertical 2&lt;/div&gt;
+            &lt;div id="vtab3" class="tab-pane"&gt;Conteúdo da Aba Vertical 3&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      </pre
+    >
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

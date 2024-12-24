@@ -1,0 +1,78 @@
+<section>
+  <h1>Alerts e Notifications</h1>
+  <p>Exemplos de alertas e notificações para diferentes cenários.</p>
+
+  <!-- Botões para demonstrar alertas -->
+  <div class="alerts-demo">
+    <button
+      class="btn primary"
+      onclick="showAlert('success', 'Operação realizada com sucesso!')"
+    >
+      Sucesso
+    </button>
+    <button
+      class="btn outlined"
+      onclick="showAlert('error', 'Ocorreu um erro ao realizar a operação.')"
+    >
+      Erro
+    </button>
+    <button
+      class="btn primary"
+      onclick="showAlert('warning', 'Este é um aviso importante.')"
+    >
+      Aviso
+    </button>
+    <button
+      class="btn outlined"
+      onclick="showAlert('info', 'Informação útil para o usuário.')"
+    >
+      Informação
+    </button>
+  </div>
+
+  <!-- Container de Alertas -->
+  <div id="alertContainer" class="alert-container"></div>
+
+  <!-- Bash com o Código -->
+  <div class="code-container">
+    <pre>
+        &lt;!-- Botões para mostrar alertas --&gt;
+        &lt;div class="alerts-demo"&gt;
+          &lt;button class="btn primary" onclick="showAlert('success', 'Operação realizada com sucesso!')"&gt;
+            Sucesso
+          &lt;/button&gt;
+          &lt;button class="btn outlined" onclick="showAlert('error', 'Ocorreu um erro ao realizar a operação.')"&gt;
+            Erro
+          &lt;/button&gt;
+          &lt;button class="btn primary" onclick="showAlert('warning', 'Este é um aviso importante.')"&gt;
+            Aviso
+          &lt;/button&gt;
+          &lt;button class="btn outlined" onclick="showAlert('info', 'Informação útil para o usuário.')"&gt;
+            Informação
+          &lt;/button&gt;
+        &lt;/div&gt;
+  
+        &lt;!-- Container de Alertas --&gt;
+        &lt;div id="alertContainer" class="alert-container"&gt;&lt;/div&gt;
+  
+        &lt;!-- Script para mostrar alertas --&gt;
+        &lt;script&gt;
+          function showAlert(type, message) {
+            const alertContainer = document.getElementById("alertContainer");
+            const alert = document.createElement("div");
+            alert.className = \`alert alert-\${type}\`;
+            alert.innerText = message;
+  
+            alertContainer.appendChild(alert);
+  
+            // Remover após 5 segundos
+            setTimeout(() => {
+              alert.remove();
+            }, 5000);
+          }
+        &lt;/script&gt;
+      </pre
+    >
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

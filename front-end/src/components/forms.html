@@ -1,0 +1,120 @@
+<section>
+  <h1>Forms Avançados</h1>
+  <p>
+    Exemplo de formulários com funcionalidades avançadas para maior usabilidade.
+  </p>
+
+  <!-- Formulário Avançado -->
+  <form id="advancedForm" class="form-container">
+    <!-- Select com Busca -->
+    <div class="form-group">
+      <label for="searchableSelect">Escolha uma opção:</label>
+      <div class="custom-select">
+        <input
+          type="text"
+          id="selectSearchInput"
+          class="input-field"
+          placeholder="Buscar..."
+          oninput="filterSelectOptions()"
+        />
+        <div class="options-list" id="selectOptions">
+          <div class="option" onclick="selectOption('Opção 1')">Opção 1</div>
+          <div class="option" onclick="selectOption('Opção 2')">Opção 2</div>
+          <div class="option" onclick="selectOption('Opção 3')">Opção 3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campo de Data com Calendário -->
+    <div class="form-group">
+      <label for="datePicker">Escolha uma data:</label>
+      <input type="date" id="datePicker" class="input-field" />
+    </div>
+
+    <!-- Upload de Arquivos com Drag-and-Drop -->
+    <div class="form-group">
+      <label for="fileUpload">Upload de Arquivo:</label>
+      <div
+        id="fileDropZone"
+        class="file-dropzone"
+        ondragover="handleDragOver(event)"
+        ondrop="handleFileDrop(event)"
+      >
+        Arraste e solte arquivos aqui ou clique para fazer upload
+        <input
+          type="file"
+          id="fileInput"
+          class="hidden"
+          onchange="handleFileChange(event)"
+        />
+      </div>
+      <div id="fileList" class="file-list"></div>
+    </div>
+
+    <!-- Botão de Submissão -->
+    <button type="submit" class="btn primary">Enviar</button>
+  </form>
+
+  <!-- Bash com o Código -->
+  <div class="code-container">
+    <pre>
+            &lt;!-- FORMULÁRIO AVANÇADO --&gt;
+          
+            &lt;!-- Select com Busca --&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="searchableSelect"&gt;Escolha uma opção:&lt;/label&gt;
+              &lt;div class="custom-select"&gt;
+                &lt;!-- Campo de busca para filtrar opções --&gt;
+                &lt;input
+                  type="text"
+                  id="selectSearchInput"
+                  class="input-field"
+                  placeholder="Buscar..."
+                  oninput="filterSelectOptions()"
+                /&gt;
+                &lt;!-- Lista de opções para o select --&gt;
+                &lt;div class="options-list" id="selectOptions"&gt;
+                  &lt;div class="option" onclick="selectOption('Opção 1')"&gt;Opção 1&lt;/div&gt;
+                  &lt;div class="option" onclick="selectOption('Opção 2')"&gt;Opção 2&lt;/div&gt;
+                  &lt;div class="option" onclick="selectOption('Opção 3')"&gt;Opção 3&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          
+            &lt;!-- Campo de Data com Calendário --&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="datePicker"&gt;Escolha uma data:&lt;/label&gt;
+              &lt;!-- Campo de data com input do tipo date --&gt;
+              &lt;input type="date" id="datePicker" class="input-field" /&gt;
+            &lt;/div&gt;
+          
+            &lt;!-- Upload de Arquivos com Drag-and-Drop --&gt;
+            &lt;div class="form-group"&gt;
+              &lt;label for="fileUpload"&gt;Upload de Arquivo:&lt;/label&gt;
+              &lt;!-- Zona de drag-and-drop para upload de arquivos --&gt;
+              &lt;div
+                id="fileDropZone"
+                class="file-dropzone"
+                ondragover="handleDragOver(event)"
+                ondrop="handleFileDrop(event)"
+              &gt;
+                Arraste e solte arquivos aqui ou clique para fazer upload
+                &lt;!-- Input de arquivos escondido, ativado pelo clique --&gt;
+                &lt;input
+                  type="file"
+                  id="fileInput"
+                  class="hidden"
+                  onchange="handleFileChange(event)"
+                /&gt;
+              &lt;/div&gt;
+              &lt;!-- Lista de arquivos exibidos após o upload --&gt;
+              &lt;div id="fileList" class="file-list"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          
+            &lt;!-- Botão de Submissão --&gt;
+            &lt;button type="submit" class="btn primary"&gt;Enviar&lt;/button&gt;
+          </pre
+    >
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>

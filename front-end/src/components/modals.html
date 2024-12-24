@@ -1,0 +1,208 @@
+<section>
+  <h1>Modais</h1>
+  <p>
+    Modais dinâmicos com diferentes tamanhos, formulários integrados e
+    animações.
+  </p>
+
+  <!-- Botões para abrir diferentes modais -->
+  <div class="buttons-demo">
+    <button class="btn primary" onclick="openModal('small-modal')">
+      Abrir Modal Pequeno
+    </button>
+    <button class="btn primary" onclick="openModal('medium-modal')">
+      Abrir Modal Médio
+    </button>
+    <button class="btn primary" onclick="openModal('large-modal')">
+      Abrir Modal Grande
+    </button>
+    <button class="btn outlined" onclick="openModal('form-modal')">
+      Abrir Modal com Formulário
+    </button>
+  </div>
+
+  <!-- Modal Pequeno -->
+  <div id="small-modal" class="modal small">
+    <div class="modal-content">
+      <h3 class="modal-header">Modal Pequeno</h3>
+      <p class="modal-body">Conteúdo do modal pequeno.</p>
+      <div class="modal-footer">
+        <button class="btn outlined" onclick="closeModal('small-modal')">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Médio -->
+  <div id="medium-modal" class="modal medium">
+    <div class="modal-content">
+      <h3 class="modal-header">Modal Médio</h3>
+      <p class="modal-body">Conteúdo do modal médio.</p>
+      <div class="modal-footer">
+        <button class="btn outlined" onclick="closeModal('medium-modal')">
+          Cancelar
+        </button>
+        <button class="btn primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Grande -->
+  <div id="large-modal" class="modal large">
+    <div class="modal-content">
+      <h3 class="modal-header">Modal Grande</h3>
+      <p class="modal-body">Conteúdo do modal grande.</p>
+      <div class="modal-footer">
+        <button class="btn outlined" onclick="closeModal('large-modal')">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal com Formulário -->
+  <div id="form-modal" class="modal medium">
+    <div class="modal-content">
+      <h3 class="modal-header">Formulário</h3>
+      <form class="modal-body">
+        <label for="name">Nome:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="input-field"
+          placeholder="Digite seu nome"
+        />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input-field"
+          placeholder="Digite seu email"
+        />
+      </form>
+      <div class="modal-footer">
+        <button class="btn outlined" onclick="closeModal('form-modal')">
+          Cancelar
+        </button>
+        <button class="btn primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-container">
+    <pre>
+      <!-- Botão para abrir modal pequeno -->
+      &lt;!-- Este botão abre o modal pequeno --&gt;
+      &lt;button class="btn primary" onclick="openModal('small-modal')"&gt;
+        Abrir Modal Pequeno
+      &lt;/button&gt;
+  
+      &lt;!-- Estrutura do Modal Pequeno --&gt;
+      &lt;!-- Adicione um ID exclusivo e a classe 'small' para este modal --&gt;
+      &lt;div id="small-modal" class="modal small"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;h3 class="modal-header"&gt;Modal Pequeno&lt;/h3&gt;
+          &lt;p class="modal-body"&gt;Conteúdo do modal pequeno.&lt;/p&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;!-- Botão para fechar o modal pequeno --&gt;
+            &lt;button class="btn outlined" onclick="closeModal('small-modal')"&gt;
+              Fechar
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      <!-- Botão para abrir modal médio -->
+      &lt;!-- Este botão abre o modal médio --&gt;
+      &lt;button class="btn primary" onclick="openModal('medium-modal')"&gt;
+        Abrir Modal Médio
+      &lt;/button&gt;
+  
+      &lt;!-- Estrutura do Modal Médio --&gt;
+      &lt;!-- Adicione um ID exclusivo e a classe 'medium' para este modal --&gt;
+      &lt;div id="medium-modal" class="modal medium"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;h3 class="modal-header"&gt;Modal Médio&lt;/h3&gt;
+          &lt;p class="modal-body"&gt;Conteúdo do modal médio.&lt;/p&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;!-- Botão para fechar ou cancelar o modal médio --&gt;
+            &lt;button class="btn outlined" onclick="closeModal('medium-modal')"&gt;
+              Cancelar
+            &lt;/button&gt;
+            &lt;!-- Botão de ação adicional no modal médio --&gt;
+            &lt;button class="btn primary"&gt;Confirmar&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      <!-- Botão para abrir modal grande -->
+      &lt;!-- Este botão abre o modal grande --&gt;
+      &lt;button class="btn primary" onclick="openModal('large-modal')"&gt;
+        Abrir Modal Grande
+      &lt;/button&gt;
+  
+      &lt;!-- Estrutura do Modal Grande --&gt;
+      &lt;!-- Adicione um ID exclusivo e a classe 'large' para este modal --&gt;
+      &lt;div id="large-modal" class="modal large"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;h3 class="modal-header"&gt;Modal Grande&lt;/h3&gt;
+          &lt;p class="modal-body"&gt;Conteúdo do modal grande.&lt;/p&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;!-- Botão para fechar o modal grande --&gt;
+            &lt;button class="btn outlined" onclick="closeModal('large-modal')"&gt;
+              Fechar
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      <!-- Botão para abrir modal com formulário -->
+      &lt;!-- Este botão abre um modal que contém um formulário --&gt;
+      &lt;button class="btn outlined" onclick="openModal('form-modal')"&gt;
+        Abrir Modal com Formulário
+      &lt;/button&gt;
+  
+      &lt;!-- Estrutura do Modal com Formulário --&gt;
+      &lt;!-- Adicione um ID exclusivo e uma classe, por exemplo 'medium', para este modal --&gt;
+      &lt;div id="form-modal" class="modal medium"&gt;
+        &lt;div class="modal-content"&gt;
+          &lt;h3 class="modal-header"&gt;Formulário&lt;/h3&gt;
+          &lt;!-- Corpo do modal com campos de formulário --&gt;
+          &lt;form class="modal-body"&gt;
+            &lt;label for="name"&gt;Nome:&lt;/label&gt;
+            &lt;!-- Campo para entrada do nome --&gt;
+            &lt;input
+              type="text"
+              id="name"
+              name="name"
+              class="input-field"
+              placeholder="Digite seu nome"
+            /&gt;
+  
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;!-- Campo para entrada do email --&gt;
+            &lt;input
+              type="email"
+              id="email"
+              name="email"
+              class="input-field"
+              placeholder="Digite seu email"
+            /&gt;
+          &lt;/form&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;!-- Botão para cancelar e fechar o modal com formulário --&gt;
+            &lt;button class="btn outlined" onclick="closeModal('form-modal')"&gt;
+              Cancelar
+            &lt;/button&gt;
+            &lt;!-- Botão para submeter o formulário --&gt;
+            &lt;button class="btn primary"&gt;Enviar&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </pre>
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
+  </div>
+</section>
