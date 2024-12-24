@@ -201,3 +201,24 @@ function openTab(event, tabId) {
   event.currentTarget.classList.add("active");
   document.getElementById(tabId).classList.add("active");
 }
+
+// Função para alternar a visibilidade do dropdown
+function toggleDropdown(menuId) {
+  const menu = document.getElementById(menuId);
+  menu.classList.toggle("show");
+}
+
+// Fechar o dropdown ao clicar fora
+document.addEventListener("click", function (event) {
+  const isDropdown = event.target.matches(".dropdown-toggle");
+  if (!isDropdown) {
+    const dropdowns = document.querySelectorAll(".dropdown-menu");
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
+  }
+});
+
+function updateProgress(barId, value) {
+  const bar = document.getElementById(barId);
+  bar.style.width = `${value}%`;
+  bar.innerText = `${value}%`;
+}
